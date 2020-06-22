@@ -1,0 +1,85 @@
+# Project information
+site_name: Robot Framework - Learn the basics
+site_url: http://dev.szabolcstoth.eu/robotframework-basics/
+site_author: Szabolcs Toth
+site_description: >-
+  A tutorial page to give a crash course to anyone who is interested in
+  test automation or more precisely in Robot Framework.
+
+# Repository
+repo_name: szabolcstoth/robotframework-basics
+repo_url: https://github.com/szabolcstoth/robotframework-basics
+
+# Copyright
+copyright: Copyright &copy; 2020 Szabolcs Toth
+
+# Configuration
+theme:
+  name: 'material'
+  
+  static_templates:
+    - 404.html
+
+  palette:
+    primary: teal
+    accent: teal
+
+# Plugins
+plugins:
+  - git-revision-date-localized
+  # - minify:
+  #     minify_html: true
+  - search
+
+# Customization
+extra:
+  social:
+      - icon: fontawesome/brands/github-alt
+        link: https://github.com/szabolcstoth
+      - icon: fontawesome/brands/linkedin
+        link: https://www.linkedin.com/in/szabolcstoth/
+      
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - pymdownx.details
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.superfences
+
+# Page tree
+nav:
+  - 'Introduction': 'index.md'
+  - 'First steps': 'first-steps.md'
+  - '01 - Greetings':
+    - 01-greetings/01-your-first-test-case.md
+    - 01-greetings/02-put-your-name-in-a-variable.md
+    - 01-greetings/03-create-your-first-keyword.md
+    - 01-greetings/04-extend-your-first-keyword.md
+    - 01-greetings/05-create-a-common-resource-file.md
+    - 01-greetings/06-additional-settings-in-test-case-table.md
+    - 01-greetings/07-global-suite-setup-and-suite-teardown.md
+    - 01-greetings/08-global-variables.md
+  - '02 - Classroom':
+    - 02-classroom/01-lists.md
+    - 02-classroom/02-file-handling.md
+    - 02-classroom/03-evaluate.md
+    - 02-classroom/04-class-based-libraries.md
+    - 02-classroom/05-module-based-libraries.md
+  - '03 - Remote':
+    - 03-remote/00-set-up-remote-host.md
+    - 03-remote/01-execute-command.md
+    - 03-remote/02-package-management.md
+    - 03-remote/03-do-not-hardcode-passwords.md
+  - '04 - Advanced':
+    - 04-advanced/01-listeners.md
+  - '05 - Tools':
+    - 05-tools/01-libdoc.md
+    - 05-tools/02-rflint.md
+
+# Google Analytics
+google_analytics:
+  - UA-170289338-1
+  - auto

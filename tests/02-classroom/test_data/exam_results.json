@@ -1,0 +1,10 @@
+{
+  "Jane Doe": {
+    "math": "90%",
+    "physics": "85%"
+  },
+  "John Doe": {
+    "math": "85%",
+    "physics": "90%"
+  }
+}

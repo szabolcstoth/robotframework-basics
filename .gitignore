@@ -1,0 +1,9 @@
+# mkdocs
+site/
+
+# byte-compiled files
+__pycache__/
+*.pyc
+
+# robotframework
+output/
