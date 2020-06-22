@@ -27,8 +27,8 @@ theme:
 # Plugins
 plugins:
   - git-revision-date-localized
-  # - minify:
-  #     minify_html: true
+  - minify:
+      minify_html: true
   - search
 
 # Customization
