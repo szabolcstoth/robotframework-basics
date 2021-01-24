@@ -78,7 +78,7 @@ nav:
     - 04-advanced/02-list-test-cases.md
   - '05 - Tools':
     - 05-tools/01-libdoc.md
-    - 05-tools/02-rflint.md
+    - 05-tools/02-robocop.md
 
 # Google Analytics
 google_analytics:
