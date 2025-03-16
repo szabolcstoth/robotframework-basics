@@ -21,8 +21,18 @@ theme:
     - 404.html
 
   palette:
-    primary: teal
-    accent: teal
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+      primary: teal
+      accent: teal
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+      primary: teal
+      accent: teal
 
 # Plugins
 plugins:
