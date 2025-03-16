@@ -17,6 +17,9 @@ copyright: Copyright &copy; 2025 Szabolcs Toth
 theme:
   name: material
 
+  features:
+    - content.code.copy
+
   static_templates:
     - 404.html
 
@@ -51,6 +54,8 @@ extra:
   analytics:
     provider: google
     property: G-KR9DNJTQLW
+extra_css:
+  - stylesheets/admonition.css
 
 # Extensions
 markdown_extensions:
