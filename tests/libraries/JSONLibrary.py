@@ -7,8 +7,8 @@ import json
 class JSONLibrary():
     """Library which contains keywords to work with JSON files."""
 
-    @keyword(tags=['json'], types={'json_file': str})
-    def parse_json_file(self, json_file):
+    @keyword("Parse JSON File", tags=['json'])
+    def parse_json_file(self, json_file: str):
         """Returns the parsed ``json_file`` as a dictionary.
 
         Example:
@@ -16,5 +16,5 @@ class JSONLibrary():
         =>
         | ${parsed_json}= {'Jane Doe': {'math': '90%', 'physics': '85%'}}
         """
-        with open(json_file, 'r') as json_content:
+        with open(json_file, 'r', encoding='utf-8') as json_content:
             return json.load(json_content)

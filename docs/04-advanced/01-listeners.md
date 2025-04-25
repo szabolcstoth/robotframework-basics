@@ -2,7 +2,7 @@
 
 ## Goal
 
-* Create a listener named `TimeListener` which logs the start time of the test execution to the console.
+* Create a listener named `TimeListener` that logs the start time of the test execution to the console.
 
 ## Solution
 
@@ -13,25 +13,24 @@
 
 ??? success "Solution: `tests/listeners/TimeListener.py`"
     ``` python
+    from robot import result, running
     from robot.api import logger
+    from robot.api.interfaces import ListenerV3
 
 
-    class TimeListener():
-        """Logs the start time of the test execution to console."""
+    class TimeListener(ListenerV3):
+        """Logs the start time of the test execution to the console."""
 
-        ROBOT_LISTENER_API_VERSION = 3
-
-        def start_test(self, test, result):
+        def start_test(self, data: running.TestCase, result: result.TestCase):
             logger.console(
                 '\nTest execution started at: {}!'.format(result.starttime)
             )
     ```
 
 ## Results
+To be able to use `TimeListener` without specifying the full path to the file, you need to specify its location with the `--pythonpath` parameter.
 
-To be able to use `TimeListener` without defining the whole path to the file, you need to set its location with `--pythonpath` parameter.
-
-Inside the `tests` folder, execute the following command.
+In the `tests` folder, execute the following command.
 
 
 ``` bash

@@ -8,13 +8,13 @@
 ## Solution
 
 !!! info "Hints"
-    `Robocop` is a static analysis tool which can be used to check your Robot Framework related files.
+    `Robocop` is a static analysis tool that can be used to check your Robot Framework related files.
 
-    [Click here to learn more about `Robocop`](https://github.com/MarketSquare/robotframework-robocop).
+    [Click here to learn more about `Robocop`](https://robocop.readthedocs.io/en/stable/).
 
 ## Results
 
-Inside the `tests` folder, execute the following command.
+In the `tests` folder, execute the following command.
 
 ``` bash
 robocop .

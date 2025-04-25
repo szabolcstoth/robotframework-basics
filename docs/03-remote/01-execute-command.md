@@ -3,15 +3,15 @@
 ## Goal
 
 * Create a new test suite named `03-Remote`, which has a suite named `01-connection`.
-* Create a new keyword named `Open Connection And Log In With Password` which establish connection to the remote host.
-* Create a new test case named `Get Date From Remote Host` which will execute `date` command on the remote host and log the output to the console.
+* Create a new keyword named `Open Connection And Log In With Password` that will connect to the remote host.
+* Create a new test case named `Get Date From Remote Host` that executes the `date` command on the remote host and logs the output to the console.
 
 ## Solution
 
 !!! info "Hints"
-    You can use `SSHLibrary` to open connection to a remote host using `SSH`.
+    You can use `SSHLibrary` to open a connection to a remote host using `SSH`.
 
-    [Click here to learn more about `SSHLibrary` and its keywords.](http://robotframework.org/SSHLibrary/SSHLibrary.html).
+    [Click here to learn more about `SSHLibrary` and its keywords.](https://marketsquare.github.io/SSHLibrary/SSHLibrary.html).
 
 ??? success "Solution: `tests/03-remote/01-connection.robot`"
     ``` robotframework
@@ -44,13 +44,13 @@
 
 ## Results
 
-Inside the `tests` folder, execute the following command to execute `03-Remote` suite.
+In the `tests` folder, execute the following command to execute the `03-Remote` suite.
 
 ``` bash
 robot --suite 03-remote .
 ```
 
-The output should be something like this:
+The output should look similar to the following:
 
     ==============================================================================
     Tests.03-Remote                                                               

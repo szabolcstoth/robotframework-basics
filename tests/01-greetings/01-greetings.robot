@@ -1,7 +1,7 @@
 *** Test Cases ***
 Original Greetings
     [Tags]    ubuntu
-    [Documentation]    This test case checks that the Print Your Name keyword works as expected.
+    [Documentation]    This test case verifies that the Print Your Name keyword works as expected.
     Print Your Name
     Print Your Name    ${YOUR_NAME}
 

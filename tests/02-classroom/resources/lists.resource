@@ -10,7 +10,7 @@ Read Names From File
     [Arguments]    ${file_with_names}
     ${file_content}=    Get File    ${file_with_names}
     @{names}=    Split To Lines    ${file_content}
-    [Return]    ${names}
+    RETURN    ${names}
 
 *** Settings ***
 Library    OperatingSystem

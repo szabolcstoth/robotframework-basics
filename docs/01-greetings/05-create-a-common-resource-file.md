@@ -3,9 +3,9 @@
 ## Goal
 
 * Move the keyword named `Print Your Name` to a common resource file named `greetings.resource`.
-* Import this resource file in `01-Greetings` suite to make `Greetings` test case pass.
-* Rename `Greetings` test case to `Original Greetings`.
-* Store another name in the `greetings.resource` and log it in a new test case named `Greetings Again` using `Print Your Name` keyword.
+* Import the resource file `greetings.resource` into the `01-Greetings` suite to make the `Greetings` test case pass.
+* Rename the `Greetings` test case to `Original Greetings`.
+* Store another name in the `greetings.resource` and log it in a new test case named `Greetings Again` using the `Print Your Name` keyword.
 
 ## Solution
 
@@ -14,7 +14,7 @@
 
     [Click here to learn more about importing resource files](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#resource-and-variable-files).
 
-    You can use built-in variables related to operating system like `${CURDIR}`, `${EXECDIR}` and `${/}` when you define the path for a resource file.
+    You can use built-in variables related to the operating system such as `${CURDIR}`, `${EXECDIR}`, and `${/}` when defining the path for a resource file.
 
     [Click here to learn more about operating system related variables](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#built-in-variables).
 
@@ -48,7 +48,7 @@
 
 ## Results
 
-Inside the `tests` folder, execute the following command to execute both test cases.
+In the `tests` folder, execute the following command to execute both test cases.
 
 ``` bash
 robot .

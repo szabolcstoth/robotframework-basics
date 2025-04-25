@@ -3,19 +3,19 @@
 ## Goal
 
 * Create a new module based library named `HelperLibrary` with a keyword named `Generate Random Number`. This keyword should return a random number between `0` and `100`.
-* Make sure that the `HelperLibrary` available to every test case.
-* Create a new suite variable named `@{STUDENTS}` in `02-Exams` suite and store some names in it.
-* Create a new test case named `Generate Exam Results` in `02-Exams` suite which will use `Generate Random Number` keyword for every student. Save the results in a file named `yet_another_results_file.txt` in the following format: `Jane Doe: 80%`.
+* Make sure that the `HelperLibrary` is available to each test case.
+* Create a new suite variable named `@{STUDENTS}` in the `02-Exams` suite and store some names in it.
+* Create a new test case named `Generate Exam Results` in the `02-Exams` suite that uses the `Generate Random Number` keyword for each student. Save the results to a file named `yet_another_results_file.txt` in the following format: `Jane Doe: 80%`.
 * Make sure that the `yet_another_results_file.txt` is removed before the test case execution starts.
 
 ## Solution
 
 !!! info "Hints"
-    Test libraries can be implemented as Python modules and Python or Java classes.
+    Test libraries can be implemented as Python modules or classes.
 
     [Click here to learn more about creating test libraries](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-keywords).
 
-    You can define test setup with `[Setup]` setting in the Test Case table.
+    You can define a test setup with the `[Setup]` setting in the Test Case table.
     [Click here to learn more about test setup and teardown functionality](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-setup-and-teardown).
 
 ??? success "Solution: `tests/libraries/HelperLibrary.py`"
@@ -24,8 +24,8 @@
     import random
 
 
-    @keyword(tags=['random'], types={'min': int, 'max': int})
-    def generate_random_number(min, max):
+    @keyword(tags=['random'])
+    def generate_random_number(min: int, max: int):
         """Generates a random number between `min` and `max`.
 
         Example:
@@ -48,7 +48,7 @@
 
     Generate Exam Results
         [Setup]    Remove File    ${FILE_TO_CREATE}
-        ${file_content}=    Set Variable
+        VAR    ${file_content}
         FOR    ${student}    IN    @{STUDENTS}
             ${grade}=    Generate Random Number    ${0}    ${100}
             ${file_content}=    Catenate    ${file_content}    ${student}: ${grade}%${\n}
@@ -68,9 +68,9 @@
 
 ## Results
 
-To be able to import `HelperLibrary` without defining the whole path to the file, you need to set its location with `--pythonpath` parameter.
+To be able to import `HelperLibrary` without specifying the full path to the file, you need to specify its location with the `--pythonpath` parameter.
 
-Inside the `tests` folder, execute the following command to execute `02-Exams` suite.
+In the `tests` folder, execute the following command to execute the `02-Exams` suite.
 
 
 ``` bash

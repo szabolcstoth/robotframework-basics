@@ -3,17 +3,17 @@
 ## Goal
 
 * Create a new test suite named `02-Classroom`, which has a suite named `01-Lists`.
-* Store multiple names in a suite variable. Examples: `Jane Doe` and `John Doe`.
-* Create a new keyword named `Print Multiple Names` which takes a list of names and logs them to console.
+* Store multiple names in one suite variable. Examples: `Jane Doe` and `John Doe`.
+* Create a new keyword named `Print Multiple Names` that takes a list of names and logs them to the console.
 
 ## Solution
 
 !!! info "Hints"
-    You can iterate through elements of a list by using `FOR` loop.
+    You can iterate through the elements of a list using the `FOR` loop.
 
-    [Click here to learn more about `FOR` loops](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#for-loops).
+    [Click here to learn more about the `FOR` loops](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#for-loops).
 
-    The old syntax of `FOR` loop is deprecated since Robot Framework 3.2 and [it will be removed in 4.0](https://github.com/robotframework/robotframework/blob/master/doc/releasenotes/rf-3.2.rst#old-for-loop-syntax).
+    The old syntax of the `FOR` loop is deprecated since Robot Framework 3.2 and [is no longer supported since 4.0](https://github.com/robotframework/robotframework/blob/master/doc/releasenotes/rf-4.0.rst#old-for-loop-syntax-is-not-supported-anymore).
 
 ??? success "Solution: `tests/02-classroom/resources/lists.resource`"
     ``` robotframework
@@ -31,7 +31,7 @@
     *** Test Cases ***
     Greetings Everyone
         [Tags]    loop
-        [Documentation]    This test case verifies the functionality of 'Print Multiple Names' keyword.
+        [Documentation]    This test case verifies the functionality of the 'Print Multiple Names' keyword.
         Print Multiple Names    ${MULTIPLE_NAMES}
 
     *** Settings ***
@@ -43,13 +43,13 @@
 
 ## Results
 
-Inside the `tests` folder, execute the following command to execute `02-Classroom` suite.
+In the `tests` folder, execute the following command to execute the `02-Classroom` suite.
 
 ``` bash
 robot --suite 02-classroom .
 ```
 
-The output should be something like this:
+The output should look similar to the following:
 
     ==============================================================================
     02-Classroom                                                                  

@@ -1,12 +1,15 @@
+*** Settings ***
+Library    SSHLibrary
+
 *** Keywords ***
 APK Search
-    [Documentation]    This keyword searches package(s) by the given `pattern`
-    ...    on the given `remote_host`.
+    [Documentation]    Searches for package(s) based on the specified
+    ...    `pattern` on the specified `remote_host`.
     [Arguments]    ${remote_host}    ${package_name}
 
     Switch Connection    ${remote_host}
     ${stdout}    ${rc}=    Execute Command
-    ...    apk search ${package_name}
+    ...    apk search --no-cache --exact ${package_name}
     ...    return_rc=${TRUE}
 
     Should Be Equal As Integers    ${rc}    0

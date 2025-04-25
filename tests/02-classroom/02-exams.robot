@@ -8,7 +8,7 @@ Get Exam Results
 
 Generate Exam Results
     [Setup]    Remove File    ${FILE_TO_CREATE}
-    ${file_content}=    Set Variable
+    VAR    ${file_content}
     FOR    ${student}    IN    @{STUDENTS}
         ${grade}=    Generate Random Number    ${0}    ${100}
         ${file_content}=    Catenate    ${file_content}    ${student}: ${grade}%${\n}

@@ -34,7 +34,7 @@ You can leave your virtual environment at any time using the `deactivate` comman
 
 ## Basic structure
 
-Create the first Robot Framework related folders and files inside the `tests` folder.
+Create the first Robot Framework related folders and files In the `tests` folder,.
 
 ``` bash
 mkdir -p tests && cd $_

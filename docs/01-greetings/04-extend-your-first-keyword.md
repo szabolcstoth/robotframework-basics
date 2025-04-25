@@ -2,13 +2,13 @@
 
 ## Goal
 
-* Modify the keyword named `Print Your Name` to take a name as an argument.
-* The keyword should work even if you do not specify a name, in this case the keyword should log `Jane Doe`.
+* Modify the `Print Your Name` keyword to take a name as an argument.
+* The keyword should work even if you do not specify a name, in which case the keyword should log `Jane Doe`.
 
 ## Solution
 
 !!! info "Hints"
-    You need to define the expected arguments in the `[Arguments]` setting inside the keyword table.
+    You must define the expected arguments in the `[Arguments]` setting within the keyword table.
 
     [Click here to learn more about specifying arguments](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#user-keyword-arguments).
 
@@ -30,7 +30,7 @@
 
 ## Results
 
-Inside the `tests` folder, execute the following command.
+In the `tests` folder, execute the following command.
 
 ``` bash
 robot .

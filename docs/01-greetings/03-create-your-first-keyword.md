@@ -2,13 +2,13 @@
 
 ## Goal
 
-* Create a new keyword named `Print Your Name` which will log `${YOUR_NAME}` variable.
+* Create a new keyword named `Print Your Name` which will log the value of `${YOUR_NAME}` variable.
 * Use this newly created keyword in the `Greetings` test case.
 
 ## Solution
 
 !!! info "Hints"
-    You need to define your keywords in the `*** Keywords ***` test data section.
+    You must define your keywords in the `*** Keywords ***` test data section.
 
     [Click here to learn more about creating keywords](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-user-keywords).
 
@@ -28,7 +28,7 @@
 
 ## Results
 
-Inside the `tests` folder, execute the following command.
+In the `tests` folder, execute the following command.
 
 ``` bash
 robot .

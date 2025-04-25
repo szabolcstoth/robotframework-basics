@@ -1,13 +1,13 @@
 # 3.0. Set up a remote host
 
 !!! info "Hints"
-    If you already have a remote host which has a configured `OpenSSH` server, you can skip this step. (The following exercices will use password-based authentication, but the `SSHLibrary` supports key-based authentication, too.)
+    If you already have a remote host with an `OpenSSH` server configured, you can skip this step. (The following exercises will use password-based authentication, but the `SSHLibrary` also supports key-based authentication.)
 
     The prerequisite for the next steps is to have an already installed and configured [Docker Engine](https://docs.docker.com/engine/install/).
 
-We are going to use [openssh-server](https://hub.docker.com/r/linuxserver/openssh-server) container from [LinuxServer.io](https://www.linuxserver.io/) team to quickly set up a limited and sandboxed environment that we can ssh into.
+We will use the [openssh-server](https://hub.docker.com/r/linuxserver/openssh-server) container from the [LinuxServer.io](https://www.linuxserver.io/) team to quickly set up a restricted and sandboxed environment that we can ssh into.
 
-Create an `openssh-server` based container with to following command.
+Create an `openssh-server` based container with the following command.
 
 ``` bash
 docker create \
@@ -25,7 +25,7 @@ docker create \
   linuxserver/openssh-server
 ```
 
-Check that your container is created.
+Verify that your container has been created.
 
 ``` bash
 docker container ls --all --filter "name=openssh-server-for-robot"
@@ -50,7 +50,7 @@ ssh robotdev@localhost -p 2222
     ECDSA key fingerprint is SHA256:x4bTJ6bxYJEp4zMk9sQMYhK8ou8oQrm6aCsKaBnj+2o.
     Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
-You should see the following promt.
+You should see the following prompt.
 
     Welcome to OpenSSH Server
 

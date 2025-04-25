@@ -7,9 +7,9 @@
 ## Solution
 
 !!! info "Hints"
-    You can set variables from command line using `--variable` option which are available globally.
+    You can set variables that are available globally from the command line using the `--variable` option.
 
-    [Click here to learn more about setting variables in command line.](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#setting-variables-in-command-line).
+    [Click here to learn more about setting variables from the command line.](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#setting-variables-in-command-line).
 
 ??? success "Solution: `tests/03-remote/01-connection.robot`"
     ``` robotframework hl_lines="19 20 28"
@@ -45,7 +45,7 @@
 
 ## Results
 
-Inside the `tests` folder, execute the following command to execute `03-Remote` suite.
+In the `tests` folder, execute the following command to execute the `03-Remote` suite.
 
 ``` bash
 robot \

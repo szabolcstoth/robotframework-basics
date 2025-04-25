@@ -3,29 +3,32 @@
 ## Goal
 
 * Create a new resource file named `apk-management.resource`.
-* Create a new keyword named `APK Search` in the previously created resource file.
-    * This keyword should accept two arguments: `remote_host` and `package_name`.
-    * Using these arguments the keyword should execute `apk search package_name` command the given `remote_host`.
-    * You should check that the command was executed successfully and log the found package(s) to the console.
+* Create a new keyword named `APK Search` in the resource file you created earlier.
+  * This keyword should take two arguments: `remote_host` and `package_name`.
+  * With these arguments, the keyword should execute the `apk search --no-cache --exact package_name` command on the specified `remote_host`.
+  * You should verify that the command ran successfully and log the package(s) found to the console.
 
 ## Solution
 
 !!! info "Hints"
-    Using one particular argument of `Execute Command` keyword will make sure that it returns the return code of the executed command. You can use that return code to check if the command was executed successfully.
+    Using a particular argument of the `Execute Command` keyword ensures that it returns the return code of the executed command. You can use this return code to check if the command was executed successfully.
 
-    [Click here to learn more about the parameters of `Execute Command` keyword.](http://robotframework.org/SSHLibrary/SSHLibrary.html#Execute%20Command).
+    [Click here to learn more about the parameters of the `Execute Command` keyword.](https://marketsquare.github.io/SSHLibrary/SSHLibrary.html#Execute%20Command).
 
 ??? success "Solution: `tests/03-remote/resources/apk-management.resource`"
     ``` robotframework
+    *** Settings ***
+    Library    SSHLibrary
+
     *** Keywords ***
     APK Search
-        [Documentation]    This keyword searches package(s) by the given `pattern`
-        ...    on the given `remote_host`.
+        [Documentation]    Searches for package(s) based on the specified
+        ...    `pattern` on the specified `remote_host`.
         [Arguments]    ${remote_host}    ${package_name}
 
         Switch Connection    ${remote_host}
         ${stdout}    ${rc}=    Execute Command
-        ...    apk search ${package_name}
+        ...    apk search --no-cache --exact ${package_name}
         ...    return_rc=${TRUE}
 
         Should Be Equal As Integers    ${rc}    0
@@ -67,19 +70,19 @@
 
 ## Results
 
-Inside the `tests` folder, execute the following command to execute `03-Remote` suite.
+In the `tests` folder, execute the following command to execute the `03-Remote` suite.
 
 ``` bash
 robot --suite 03-remote .
 ```
 
-The output should be something like this:
+The output should look similar to the following:
 
     -----------------------------------------------------------------------------
     Test Package Management
-    The following packages were found: ipython-7.14.0-r0
-    ipython-doc-7.14.0-r0
-    py3-ipython_genutils-0.2.0-r2
+    The following packages were found: fetch http://dl-cdn.alpinelinux.org/alpine/v3.21/main/x86_64/APKINDEX.tar.gz
+    fetch http://dl-cdn.alpinelinux.org/alpine/v3.21/community/x86_64/APKINDEX.tar.gz
+    ipython-8.30.0-r0
     Test Package Management                                               | PASS |
 
 You can check the generated `log.html` file to see how your test cases worked.

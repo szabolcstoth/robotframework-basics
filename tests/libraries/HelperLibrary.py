@@ -2,8 +2,8 @@ from robot.api.deco import keyword
 import random
 
 
-@keyword(tags=['random'], types={'min': int, 'max': int})
-def generate_random_number(min, max):
+@keyword(tags=['random'])
+def generate_random_number(min: int, max: int):
     """Generates a random number between `min` and `max`.
 
     Example:

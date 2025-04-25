@@ -2,7 +2,7 @@
 
 ## Goal
 
-* Store another name in the `__init__.robot` file and log it in a new test case named `Greetings From Global` using `Print Your Name` keyword.
+* Store a differrent name in the `__init__.robot` file and log it in a new test case named `Greetings From Global` with the `Print Your Name` keyword.
 
 ## Solution
 
@@ -29,7 +29,7 @@
     *** Test Cases ***
     Original Greetings
         [Tags]    ubuntu
-        [Documentation]    This test case checks that the Print Your Name keyword works as expected.
+        [Documentation]    This test case verifies that the Print Your Name keyword works as expected.
         Print Your Name
         Print Your Name    ${YOUR_NAME}
 
@@ -52,7 +52,7 @@
 
 ## Results
 
-Inside the `tests` folder, execute the following command.
+In the `tests` folder, execute the following command.
 
 ``` bash
 robot .

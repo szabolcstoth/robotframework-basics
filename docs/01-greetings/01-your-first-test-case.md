@@ -2,18 +2,18 @@
 
 ## Goal
 
-* Create a new test case named `Greetings` in the `01-Greetings` suite, which logs your name.
+* Create a new test case named `Greetings` in the `01-Greetings` suite that logs your name.
 
 ## Solution
 
 !!! info "Hints"
-    You need to define your test cases in the `*** Test Cases ***` test data section.
+    You must define your test cases in the `*** Test Cases ***` test data section.
 
     [Click here to learn more about test data sections](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-data-sections).
 
-    Robot Framework has a standard library named `BuiltIn`, which provides the most generic keywords. This library is imported automatically, its keywords are accessible anytime.
+    Robot Framework has a standard library named `BuiltIn` that provides the most generic keywords. This library is automatically imported and its keywords are always available.
 
-    [Click here to learn more about `Log` keyword](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Log).
+    [Click here to learn more about the `Log` keyword](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Log).
 
 ??? success "Solution: `tests/01-greetings/01-greetings.robot`"
     ``` robotframework
@@ -25,15 +25,15 @@
 ## Results
 
 !!! question "How to execute a test case?"
-    Use the `robot` command. You need to define a folder or a file which contains at least one test case. [Click here to learn more about command line options](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#starting-test-execution).
+    Use the `robot` command. You must specify a folder or a file containing at least one test case. [Click here to learn more about the command line options](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#starting-test-execution).
 
-Inside the `tests` folder, execute the following command.
+In the `tests` folder, execute the following command.
 
 ``` bash
 robot .
 ```
 
-The output should be something like this:
+The output should look similar to the following:
 
     ==============================================================================
     Tests

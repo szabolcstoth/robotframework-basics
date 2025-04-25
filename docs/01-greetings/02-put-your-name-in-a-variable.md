@@ -3,7 +3,7 @@
 ## Goal
 
 * Store your name in a variable using the `*** Variables ***` table.
-* Modify the `Greetings` test case to use the newly created variable instead of the hard coded name!
+* Modify the `Greetings` test case to use the newly created variable instead of the hardcoded name!
 
 ## Solution
 
@@ -24,7 +24,7 @@
 
 ## Results
 
-Inside the `tests` folder, execute the following command.
+In the `tests` folder, execute the following command.
 
 ``` bash
 robot .

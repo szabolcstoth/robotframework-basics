@@ -2,21 +2,21 @@
 
 ## Goal
 
-* Write a new Python script which lists the test cases in a given suite.
-    * Create a new folder named `tools` in the `tests` folder and save your script into that folder as `test_case_list.py`.
-    * The script should accept the path to the suite as a command line argument (the path can point to a folder or to a `.robot` file).
-    * The script should iterate through every suite in the given path.
+* Write a new Python script that lists the test cases in a given suite.
+  * Create a new folder named `tools` in the `tests` folder and save your script in that folder as `test_case_list.py`.
+  * The script should take the path to the suite as a command line argument (the path can point to a folder or to a `.robot` file).
+  * The script should iterate through each suite in the specified path.
 
 ## Solution
 
 !!! info "Hints"
-    It is recommended to use `argparse` module from the Python standard library to process command line arguments.
+    It is recommended to use the `argparse` module from the Python standard library to process command line arguments.
 
-    [Click here to learn more about `argparse` module](https://docs.python.org/3/library/argparse.html).
+    [Click here to learn more about the `argparse` module](https://docs.python.org/3/library/argparse.html).
 
-    You can use `TestSuiteBuilder` class from `robot.running` package to parse the test data in the given path.
+    You can use the `TestSuiteBuilder` class from the `robot.running` package to parse the test data in the given path.
 
-    [Click here to learn more about how to use the `TestSuiteBuilder` class](https://robot-framework.readthedocs.io/en/v3.2.1/autodoc/robot.running.html#examples).
+    [Click here to learn more about using the `TestSuiteBuilder` class](https://robot-framework.readthedocs.io/en/latest/autodoc/robot.running.html#examples).
 
 ??? success "Solution: `tests/tools/test_case_list.py`"
     ``` python
@@ -73,19 +73,19 @@
 
 ## Results
 
-Inside the `tests` folder, execute the following command.
+In the `tests` folder, execute the following command.
 
 ``` bash
 python ./tools/test_case_list.py --suite .
 ```
 
-The output should be something like this:
+The output should look similar to the following:
 
     Root Suite: Tests
     -
     Test Case: Tests.01-Greetings.01-Greetings.Original Greetings
     Tags: [ubuntu]
-    Documentation: This test case checks that the Print Your Name keyword works as expected.
+    Documentation: This test case verifies that the Print Your Name keyword works as expected.
     -
     Test Case: Tests.01-Greetings.01-Greetings.Greetings Again
     Tags: [centos]
@@ -99,15 +99,15 @@ You can also list the test cases of a single `.robot` file.
 python ./tools/test_case_list.py --suite ./02-classroom/01-lists.robot
 ```
 
-    The output should be something like this:
+The output should look similar to the following:
 
     Root Suite: 01-Lists
     -
     Test Case: 01-Lists.Greetings Everyone
     Tags: [loop]
-    Documentation: This test case verifies the functionality of 'Print Multiple Names' keyword.
+    Documentation: This test case verifies the functionality of the 'Print Multiple Names' keyword.
     -
     Test Case: 01-Lists.Students
     Tags: []
-    Documentation: This test case logs the names from students.txt to console.
+    Documentation: This test case logs the names from students.txt to the console.
     -

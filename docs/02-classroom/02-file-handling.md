@@ -2,18 +2,18 @@
 
 ## Goal
 
-* Create a new test data file named `students.txt` which contains two names in separate lines.
-* Create a new keyword named `Read Names From File` which will log the names to console from the `students.txt`.
-* Create a new test case named `Students` which will utilize the previously created keyword.
+* Create a new test data file named `students.txt` that contains two names in separate lines.
+* Create a new keyword named `Read Names From File` that will log the names from the `students.txt` to console.
+* Create a new test case named `Students` that uses the previously created keyword.
 
 ## Solution
 
 !!! info "Hints"
-    You can handle files and directories by using keywords from the `OperatingSystem` library.
+    You can manipulate files and directories by using keywords from the `OperatingSystem` library.
 
     [Click here to learn more about the `OperatingSystem` library](https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html).
 
-    You will need to use `Split To Lines` keyword from the `String` library.
+    You will need to use the `Split To Lines` keyword from the `String` library.
 
     [Click here to learn more about the `String` library](https://robotframework.org/robotframework/latest/libraries/String.html).
 
@@ -37,7 +37,7 @@
         [Arguments]    ${file_with_names}
         ${file_content}=    Get File    ${file_with_names}
         @{names}=    Split To Lines    ${file_content}
-        [Return]    ${names}
+        RETURN    ${names}
 
     *** Settings ***
     Library    OperatingSystem
@@ -49,11 +49,11 @@
     *** Test Cases ***
     Greetings Everyone
         [Tags]    loop
-        [Documentation]    This test case verifies the functionality of 'Print Multiple Names' keyword.
+        [Documentation]    This test case verifies the functionality of the 'Print Multiple Names' keyword.
         Print Multiple Names    ${MULTIPLE_NAMES}
 
     Students
-        [Documentation]    This test case logs the names from students.txt to console.
+        [Documentation]    This test case logs the names from students.txt to the console.
         @{students}=    Read Names From File    ${STUDENTS_TXT}
         Print Multiple Names    ${students}
 
@@ -67,7 +67,7 @@
 
 ## Results
 
-Inside the `tests` folder, execute the following command to execute `02-Classroom` suite.
+In the `tests` folder, execute the following command to execute the `02-Classroom` suite.
 
 ``` bash
 robot --suite 02-classroom .
