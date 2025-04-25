@@ -3,9 +3,9 @@
 ## Goal
 
 * Write a new Python script that lists the test cases in a given suite.
-  * Create a new folder named `tools` in the `tests` folder and save your script in that folder as `test_case_list.py`.
-  * The script should take the path to the suite as a command line argument (the path can point to a folder or to a `.robot` file).
-  * The script should iterate through each suite in the specified path.
+    * Create a new folder named `tools` in the `tests` folder and save your script in that folder as `test_case_list.py`.
+    * The script should take the path to the suite as a command line argument (the path can point to a folder or to a `.robot` file).
+    * The script should iterate through each suite in the specified path.
 
 ## Solution
 

@@ -4,9 +4,9 @@
 
 * Create a new resource file named `apk-management.resource`.
 * Create a new keyword named `APK Search` in the resource file you created earlier.
-  * This keyword should take two arguments: `remote_host` and `package_name`.
-  * With these arguments, the keyword should execute the `apk search --no-cache --exact package_name` command on the specified `remote_host`.
-  * You should verify that the command ran successfully and log the package(s) found to the console.
+    * This keyword should take two arguments: `remote_host` and `package_name`.
+    * With these arguments, the keyword should execute the `apk search --no-cache --exact package_name` command on the specified `remote_host`.
+    * You should verify that the command ran successfully and log the package(s) found to the console.
 
 ## Solution
 
