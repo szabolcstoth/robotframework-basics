@@ -28,17 +28,19 @@
 
 ??? success "Solution: `tests/02-classroom/01-lists.robot`"
     ``` robotframework
-    *** Test Cases ***
-    Greetings Everyone
-        [Tags]    loop
-        [Documentation]    This test case verifies the functionality of the 'Print Multiple Names' keyword.
-        Print Multiple Names    ${MULTIPLE_NAMES}
-
     *** Settings ***
     Resource    ${CURDIR}${/}resources${/}lists.resource
 
+
     *** Variables ***
-    @{MULTIPLE_NAMES}    Jane Doe    John Doe
+    @{MULTIPLE_NAMES}       Jane Doe    John Doe
+
+
+    *** Test Cases ***
+    Greetings Everyone
+        [Documentation]    This test case verifies the functionality of the 'Print Multiple Names' keyword.
+        [Tags]    loop
+        Print Multiple Names    ${MULTIPLE_NAMES}
     ```
 
 ## Results

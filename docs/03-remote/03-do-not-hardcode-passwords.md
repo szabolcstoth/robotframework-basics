@@ -12,7 +12,18 @@
     [Click here to learn more about setting variables from the command line.](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#setting-variables-in-command-line).
 
 ??? success "Solution: `tests/03-remote/01-connection.robot`"
-    ``` robotframework hl_lines="19 20 28"
+    ``` robotframework hl_lines="9 31 32"
+    *** Settings ***
+    Library         SSHLibrary
+    Resource        ${CURDIR}${/}resources${/}apk-management.resource
+
+    Suite Setup     Open Connection And Log In With Password
+
+
+    *** Variables ***
+    &{HOST}     name=localhost    port=2222    alias=openssh-server-for-robot
+
+
     *** Test Cases ***
     Get Date From Remote Host
         Switch Connection    ${HOST}[alias]
@@ -22,6 +33,7 @@
 
     Test Package Management
         APK Search    ${HOST}[alias]    ipython
+
 
     *** Keywords ***
     Open Connection And Log In With Password
@@ -33,14 +45,6 @@
         Login
         ...    ${SSH_USERNAME}
         ...    ${SSH_PASSWORD}
-
-    *** Settings ***
-    Library        SSHLibrary
-    Resource       ${CURDIR}${/}resources${/}apk-management.resource
-    Suite Setup    Open Connection And Log In With Password
-
-    *** Variables ***
-    &{HOST}    name=localhost    port=2222    alias=openssh-server-for-robot
     ```
 
 ## Results

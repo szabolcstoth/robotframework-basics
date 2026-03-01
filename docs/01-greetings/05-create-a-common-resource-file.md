@@ -20,17 +20,26 @@
 
 ??? success "Solution: `tests/01-greetings/resources/greetings.resource`"
     ``` robotframework
+    *** Variables ***
+    ${ANOTHER_NAME_IN_RESOURCE}     Common Name
+
+
     *** Keywords ***
     Print Your Name
         [Arguments]    ${your_name}=Jane Doe
         Log    ${your_name}
-
-    *** Variables ***
-    ${ANOTHER_NAME_IN_RESOURCE}    Common Name
     ```
 
 ??? success "Solution: `tests/01-greetings/01-greetings.robot`"
-    ``` robotframework hl_lines="6 7 9 10"
+    ``` robotframework hl_lines="1 2 14 15"
+    *** Settings ***
+    Resource    ${CURDIR}${/}resources${/}greetings.resource
+
+
+    *** Variables ***
+    ${YOUR_NAME}    Your Name
+
+
     *** Test Cases ***
     Original Greetings
         Print Your Name
@@ -38,12 +47,6 @@
 
     Greetings Again
         Print Your Name    ${ANOTHER_NAME_IN_RESOURCE}
-
-    *** Settings ***
-    Resource    ${CURDIR}${/}resources${/}greetings.resource
-
-    *** Variables ***
-    ${YOUR_NAME}    Your Name
     ```
 
 ## Results

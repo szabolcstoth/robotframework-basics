@@ -15,24 +15,26 @@
     [Click here to learn more about the available settings in Test Case table](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-case-section).
 
 ??? success "Solution: `tests/01-greetings/01-greetings.robot`"
-    ``` robotframework hl_lines="3 4 9 10"
+    ``` robotframework hl_lines="11 12 17 18"
+    *** Settings ***
+    Resource    ${CURDIR}${/}resources${/}greetings.resource
+
+
+    *** Variables ***
+    ${YOUR_NAME}    Your Name
+
+
     *** Test Cases ***
     Original Greetings
-        [Tags]    ubuntu
         [Documentation]    This test case verifies that the Print Your Name keyword works as expected.
+        [Tags]    ubuntu
         Print Your Name
         Print Your Name    ${YOUR_NAME}
 
     Greetings Again
-        [Tags]    centos
         [Documentation]    This test case proves that we can import variables from resource files.
+        [Tags]    centos
         Print Your Name    ${ANOTHER_NAME_IN_RESOURCE}
-
-    *** Settings ***
-    Resource    ${CURDIR}${/}resources${/}greetings.resource
-
-    *** Variables ***
-    ${YOUR_NAME}    Your Name
     ```
 
 ## Results

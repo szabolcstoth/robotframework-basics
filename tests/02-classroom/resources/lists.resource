@@ -1,3 +1,8 @@
+*** Settings ***
+Library     OperatingSystem
+Library     String
+
+
 *** Keywords ***
 Print Multiple Names
     [Arguments]    ${multiple_names}
@@ -11,7 +16,3 @@ Read Names From File
     ${file_content}=    Get File    ${file_with_names}
     @{names}=    Split To Lines    ${file_content}
     RETURN    ${names}
-
-*** Settings ***
-Library    OperatingSystem
-Library    String

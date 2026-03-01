@@ -13,17 +13,19 @@
     [Click here to learn more about creating keywords](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-user-keywords).
 
 ??? success "Solution: `tests/01-greetings/01-greetings.robot`"
-    ``` robotframework hl_lines="3 5 6 7"
+    ``` robotframework hl_lines="7 10 11 12"
+    *** Variables ***
+    ${YOUR_NAME}    Your Name
+
+
     *** Test Cases ***
     Greetings
         Print Your Name
 
+
     *** Keywords ***
     Print Your Name
         Log    ${YOUR_NAME}
-
-    *** Variables ***
-    ${YOUR_NAME}    Your Name
     ```
 
 ## Results

@@ -21,12 +21,24 @@
 
 ??? success "Solution: `tests/03-remote/01-connection.robot`"
     ``` robotframework
+    *** Settings ***
+    Library         SSHLibrary
+
+    Suite Setup     Open Connection And Log In With Password
+
+
+    *** Variables ***
+    &{HOST}     name=localhost    port=2222    alias=openssh-server-for-robot
+    &{AUTH}     username=robotdev    password=Hn7c5%lyBpIn8*8Z
+
+
     *** Test Cases ***
     Get Date From Remote Host
         Switch Connection    ${HOST}[alias]
         ${date}=    Execute Command    date
 
         Log To Console    ${date}
+
 
     *** Keywords ***
     Open Connection And Log In With Password
@@ -38,14 +50,6 @@
         Login
         ...    ${AUTH}[username]
         ...    ${AUTH}[password]
-
-    *** Settings ***
-    Library        SSHLibrary
-    Suite Setup    Open Connection And Log In With Password
-
-    *** Variables ***
-    &{HOST}    name=localhost    port=2222    alias=openssh-server-for-robot
-    &{AUTH}    username=robotdev    password=Hn7c5%lyBpIn8*8Z
     ```
 
 ## Results

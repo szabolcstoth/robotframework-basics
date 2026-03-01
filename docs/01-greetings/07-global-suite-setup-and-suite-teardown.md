@@ -15,8 +15,9 @@
 ??? success "Solution: `tests/__init__.robot`"
     ``` robotframework
     *** Settings ***
-    Suite Setup       Global Suite Setup
-    Suite Teardown    Global Suite Teardown
+    Suite Setup         Global Suite Setup
+    Suite Teardown      Global Suite Teardown
+
 
     *** Keywords ***
     Global Suite Setup

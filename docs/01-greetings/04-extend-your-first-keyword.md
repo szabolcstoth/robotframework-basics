@@ -13,19 +13,21 @@
     [Click here to learn more about specifying arguments](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#user-keyword-arguments).
 
 ??? success "Solution: `tests/01-greetings/01-greetings.robot`"
-    ``` robotframework hl_lines="4 8 9"
+    ``` robotframework hl_lines="8 13 14"
+    *** Variables ***
+    ${YOUR_NAME}    Your Name
+
+
     *** Test Cases ***
     Greetings
         Print Your Name
         Print Your Name    ${YOUR_NAME}
 
+
     *** Keywords ***
     Print Your Name
         [Arguments]    ${your_name}=Jane Doe
         Log    ${your_name}
-
-    *** Variables ***
-    ${YOUR_NAME}    Your Name
     ```
 
 ## Results

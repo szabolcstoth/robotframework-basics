@@ -24,7 +24,12 @@
     ```
 
 ??? success "Solution: `tests/02-classroom/resources/lists.resource`"
-    ``` robotframework hl_lines="9 10 11 12 13 15 16 17"
+    ``` robotframework hl_lines="1 2 3 14 15 16 17 18"
+    *** Settings ***
+    Library     OperatingSystem
+    Library     String
+
+
     *** Keywords ***
     Print Multiple Names
         [Arguments]    ${multiple_names}
@@ -38,31 +43,29 @@
         ${file_content}=    Get File    ${file_with_names}
         @{names}=    Split To Lines    ${file_content}
         RETURN    ${names}
-
-    *** Settings ***
-    Library    OperatingSystem
-    Library    String
     ```
 
 ??? success "Solution: `tests/02-classroom/01-lists.robot`"
-    ``` robotframework hl_lines="7 8 9 10 17"
+    ``` robotframework hl_lines="7 16 17 18 19"
+    *** Settings ***
+    Resource    ${CURDIR}${/}resources${/}lists.resource
+
+
+    *** Variables ***
+    @{MULTIPLE_NAMES}       Jane Doe    John Doe
+    ${STUDENTS_TXT}         ${CURDIR}${/}test_data${/}students.txt
+
+
     *** Test Cases ***
     Greetings Everyone
-        [Tags]    loop
         [Documentation]    This test case verifies the functionality of the 'Print Multiple Names' keyword.
+        [Tags]    loop
         Print Multiple Names    ${MULTIPLE_NAMES}
 
     Students
         [Documentation]    This test case logs the names from students.txt to the console.
         @{students}=    Read Names From File    ${STUDENTS_TXT}
         Print Multiple Names    ${students}
-
-    *** Settings ***
-    Resource    ${CURDIR}${/}resources${/}lists.resource
-
-    *** Variables ***
-    @{MULTIPLE_NAMES}    Jane Doe    John Doe
-    ${STUDENTS_TXT}      ${CURDIR}${/}test_data${/}students.txt
     ```
 
 ## Results

@@ -13,13 +13,14 @@
     [Click here to learn more about variables](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#variables).
 
 ??? success "Solution: `tests/01-greetings/01-greetings.robot`"
-    ``` robotframework hl_lines="3 5 6"
+    ``` robotframework hl_lines="1 2"
+    *** Variables ***
+    ${YOUR_NAME}    Your Name
+
+
     *** Test Cases ***
     Greetings
         Log    ${YOUR_NAME}
-
-    *** Variables ***
-    ${YOUR_NAME}    Your Name
     ```
 
 ## Results

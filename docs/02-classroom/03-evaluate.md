@@ -39,6 +39,14 @@
 
 ??? success "Solution: `tests/02-classroom/02-exams.robot`"
     ``` robotframework
+    *** Settings ***
+    Library     OperatingSystem
+
+
+    *** Variables ***
+    ${EXAM_RESULTS_JSON}    ${CURDIR}${/}test_data${/}exam_results.json
+
+
     *** Test Cases ***
     Get Exam Results
         ${json_content}=    Get File    ${EXAM_RESULTS_JSON}
@@ -47,12 +55,6 @@
         FOR    ${student}    ${results}    IN    &{results}
             Log To Console    ${student}: ${results}
         END
-
-    *** Settings ***
-    Library    OperatingSystem
-
-    *** Variables ***
-    ${EXAM_RESULTS_JSON}    ${CURDIR}${/}test_data${/}exam_results.json
     ```
 
 ## Results

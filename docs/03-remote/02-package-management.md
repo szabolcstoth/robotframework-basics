@@ -18,7 +18,8 @@
 ??? success "Solution: `tests/03-remote/resources/apk-management.resource`"
     ``` robotframework
     *** Settings ***
-    Library    SSHLibrary
+    Library     SSHLibrary
+
 
     *** Keywords ***
     APK Search
@@ -36,7 +37,19 @@
     ```
 
 ??? success "Solution: `tests/03-remote/01-connection.robot`"
-    ``` robotframework hl_lines="8 9 24"
+    ``` robotframework hl_lines="3 20 21"
+    *** Settings ***
+    Library         SSHLibrary
+    Resource        ${CURDIR}${/}resources${/}apk-management.resource
+
+    Suite Setup     Open Connection And Log In With Password
+
+
+    *** Variables ***
+    &{HOST}     name=localhost    port=2222    alias=openssh-server-for-robot
+    &{AUTH}     username=robotdev    password=Hn7c5%lyBpIn8*8Z
+
+
     *** Test Cases ***
     Get Date From Remote Host
         Switch Connection    ${HOST}[alias]
@@ -46,6 +59,7 @@
 
     Test Package Management
         APK Search    ${HOST}[alias]    ipython
+
 
     *** Keywords ***
     Open Connection And Log In With Password
@@ -57,15 +71,6 @@
         Login
         ...    ${AUTH}[username]
         ...    ${AUTH}[password]
-
-    *** Settings ***
-    Library        SSHLibrary
-    Resource       ${CURDIR}${/}resources${/}apk-management.resource
-    Suite Setup    Open Connection And Log In With Password
-
-    *** Variables ***
-    &{HOST}    name=localhost    port=2222    alias=openssh-server-for-robot
-    &{AUTH}    username=robotdev    password=Hn7c5%lyBpIn8*8Z
     ```
 
 ## Results

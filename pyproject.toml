@@ -7,3 +7,21 @@ select = [
     "SIM",
     "I",
 ]
+
+[tool.ruff.lint.pycodestyle]
+max-line-length = 100
+
+[tool.robocop.lint]
+ignore = [
+    "missing-doc-keyword",
+    "missing-doc-test-case",
+    "missing-doc-suite",
+    "missing-doc-resource-file",
+    "no-global-variable",
+]
+
+[tool.robocop.format]
+configure = [
+    "NormalizeAssignments.equal_sign_type=equal_sign",
+    "NormalizeAssignments.equal_sign_type_variables=autodetect",
+]
