@@ -22,9 +22,7 @@
         """Logs the start time of the test execution to the console."""
 
         def start_test(self, data: running.TestCase, result: result.TestCase):
-            logger.console(
-                '\nTest execution started at: {}!'.format(result.starttime)
-            )
+            logger.console(f"\nTest execution started at: {result.starttime}!")
     ```
 
 ## Results
